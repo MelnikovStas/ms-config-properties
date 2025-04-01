@@ -1,9 +1,12 @@
 spring:
+  application:
+    name: config-client
   config:
     import: "optional:config-server:"
   cloud:
     config:
-      enabled: true
-      discovery:
-        enabled: true
       uri: http://localhost:8888
+
+server:
+  port: 8081
+  
