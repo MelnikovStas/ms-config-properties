@@ -6,4 +6,4 @@ spring:
       enabled: true
       discovery:
         enabled: true
-      uri: http://localhost:8888
+      uri: http://localhost:8880
