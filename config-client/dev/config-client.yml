@@ -1,12 +1,11 @@
+# application.yml для Config Client
 spring:
   application:
     name: config-client
   config:
-    import: "optional:config-server:"
-  cloud:
-    config:
-      uri: http://localhost:8888
+    import: "optional:configserver:http://localhost:8888"  # Обратите внимание на формат
+  profiles:
+    active: dev  # Укажите нужный профиль (должен соответствовать папке в Git репозитории)
 
 server:
-  port: 8081
-  
+  port: 8081  # Не используйте 8888 - это порт Config Server
