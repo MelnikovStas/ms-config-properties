@@ -1,2 +1,15 @@
-example:
-  property: "This is DEV config"
+spring:
+  application:
+    name: config-client
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+  instance:
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 30
+    statusPageUrl: https://${eureka.hostname}/info
+    healthCheckUrl: https://${eureka.hostname}/health
+    homePageUrl: https://${eureka.hostname}/eureka
